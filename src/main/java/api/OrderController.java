@@ -41,7 +41,7 @@ public class OrderController {
         return true;
     }
 
-    @RequestMapping
+    @RequestMapping("/getOrder")
     String getOrder() throws JsonProcessingException {
         if(OrderQueue.isEmpty()) return "No Order";
         Order temp = OrderQueue.get(0);
@@ -53,4 +53,8 @@ public class OrderController {
         return stringedObj;
     }
 
+    @RequestMapping("/")
+    String home() {
+        return "<h1> API, For OOAD Project </h1>";
+    }
 }
